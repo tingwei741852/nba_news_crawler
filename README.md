@@ -71,7 +71,7 @@ graph TD
 | img_href     | varchar(200) | NOT NULL                               | 縮圖連結                |
 
 ## QPS測試
-> 利用Apache Benchmark 測試API
+利用Apache Benchmark 測試API，總共發送1000個請求，一次發送100個
 ### 測試結果
  ![image](https://github.com/tingwei741852/nba_news_crawler/blob/main/img/QPS_test.png)
 
