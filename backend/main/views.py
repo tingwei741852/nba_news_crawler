@@ -16,7 +16,7 @@ from channels.layers import get_channel_layer
 scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), 'default')
 
-@register_job(scheduler, "interval", id="test1", minutes=30, replace_existing=True)   
+@register_job(scheduler, "interval", id="test1", seconds=30, replace_existing=True)   
 def scheduled_fetch_news():
     created_count  = fetch_news()
     channel_layer = get_channel_layer()

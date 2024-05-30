@@ -60,17 +60,16 @@ def fetch_news():
                 print(f"Error processing news: {e}")
 
         created_count = 0
+        News.objects.exclude(news_href__in=news_href_list).update(display=False)
         if news_items:
-            # insert data
             created_objs = News.objects.bulk_create(news_items)
             created_count = len(created_objs)
-            # 寫入redis
             cacheCon = get_redis_connection("default")
             display_news = News.objects.filter(display=True)
             focusNews = NewsSerializer(display_news, many=True).data
             cacheCon.set('focusNews', json.dumps(focusNews))
         
-        News.objects.exclude(news_href__in=news_href_list).update(display=False)
+        
         return created_count
     else:
         print("沒有找到slide")

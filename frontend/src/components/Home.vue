@@ -75,6 +75,7 @@ export default {
             console.log(data.created_count)
             if (data.created_count > 0) {
                 this.getNewsList()
+                // console.log("yes")
                 this.news_update = true
             }
         }
