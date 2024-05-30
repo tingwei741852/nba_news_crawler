@@ -70,4 +70,9 @@ graph LR
 | news_href    | varchar(200) | NOT NULL, UNIQUE                       | 新聞的連結              |
 | img_href     | varchar(200) | NOT NULL                               | 縮圖連結                |
 
+## QPS測試
+> 利用Apache Benchmark 測試API
+### 測試結果
+ ![image](https://github.com/tingwei741852/nba_news_crawler/blob/main/img/QPS_test.png)
+
 
