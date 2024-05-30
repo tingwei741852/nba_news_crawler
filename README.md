@@ -44,7 +44,7 @@ graph LR
 * 程式路徑: backend/main/crawler.py
 * 流程圖
 ```mermaid
-graph LR
+graph TD
     A[開始] -->|每30分鐘| B[執行爬蟲程式]
     B --> C{有新的資料?}
     C -->|是| D[將新的新聞寫入DB]
